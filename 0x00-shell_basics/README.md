@@ -12,4 +12,9 @@
 11. Listing files(all)
 12. Printing the type of the file
 13. Creating a symbolic link
-14. Coping HTML files
+14. Coping HTML file
+15. MOving upper case files
+16. Cleaning emacs
+17. Trees
+18. listing files seperated by commas
+19. school file
