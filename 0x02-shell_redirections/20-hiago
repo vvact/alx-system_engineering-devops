@@ -1,2 +1,2 @@
 #!/bin/bash
-tr 'cC' > /dev/null
+tr -d 'cC'
