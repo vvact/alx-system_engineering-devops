@@ -1,0 +1,22 @@
+total 96
+-rw-r--r-- 1 root root     0 Feb 13 04:23 
+drwxr-xr-x 2 root root  4096 Feb 13 05:48 .
+drwxr-xr-x 6 root root   121 Feb 13 01:20 ..
+-rwxr--r-- 1 root root    32 Feb 13 02:20 0-hello_world
+-rwxr--r-- 1 root root    28 Feb 13 03:14 1-confused_smiley
+-rw-r--r-- 1 root root 12288 Feb 13 02:52 .1-confused_smiley.swo
+-rw-r--r-- 1 root root 12288 Feb 13 02:41 .1-confused_smiley.swp
+-rwxr--r-- 1 root root    28 Feb 13 03:45 2-hellofile
+-rwxr--r-- 1 root root    39 Feb 13 03:49 3-twofiles
+-rwxr--r-- 1 root root    29 Feb 13 03:53 4-lastlines
+-rwxr--r-- 1 root root    29 Feb 13 03:56 5-firstlines
+-rwxr--r-- 1 root root    40 Feb 13 04:16 6-third_line
+-rwxr--r-- 1 root root    92 Feb 13 05:30 7-file
+-rwxr--r-- 1 root root    73 Feb 13 05:39 7-files
+-rwxr--r-- 1 root root    36 Feb 13 05:47 8-cwd_state
+-rw-r--r-- 1 root root    39 Feb 13 04:40 \*\'Best
+-rw-r--r-- 1 root root    12 Feb 13 04:45 *\"Best School"\\*$?*****:)
+-rw-r--r-- 1 root root    12 Feb 13 05:12 \*\\\"Best School\"\\\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root     0 Feb 13 05:48 ls_cwd_content
+-rw-r--r-- 1 root root   849 Feb 13 02:18 README.md
+-rw-r--r-- 1 root root 12288 Feb 13 01:26 .README.md.swp
