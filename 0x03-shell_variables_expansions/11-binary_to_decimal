@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((BINARY)) | bc
+echo $(echo "ibase=2" | bc <<< $BINARY)$'\n'
