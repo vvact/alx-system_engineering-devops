@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(echo "ibase=2" | bc <<< $BINARY)$'\n'
+echo $((BINARY + (2**0)))
