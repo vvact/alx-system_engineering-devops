@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script that displays lines containing the bashword,allows to get bash pid# shellcheck disable=SC2009
+
+ps aux | grep bash | grep -v grep 
