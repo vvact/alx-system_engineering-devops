@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Displays a lsit of currently running processes
+ps auxf
