@@ -6,33 +6,23 @@
 # Deletes the created file and terminates itself when receiving a SIGQUIT
 # or sigterm signal
 
-echo $$ >> /var/run/myscript.pid
+PRID=$$
+echo "$PRID" > /var/run/myscript.pid
 
-# Fuction to handle sigterm signal
-handle_sigterm()
-{
-	echo "I hate the kill command"
-	rm /var/run/my_script.pid
-	exit
-}
-
-# Function to handle SIGINT signal
 handle_sigint()
 {
-	echo "Y U no love me?!"
+	echo "Y U no love?!"
 }
-# Function to handle SIGQUIT signal
 handle_sigquit()
 {
-	rm /var/run/my_script.pid
-	exit
+	echo "I hate the kill command"
+	rm -f /var/run/myscript.pid
+	kill -9 $PRID
 }
-# Display messages indefinitely
-trap handle_sigterm SIGTERM
-trap handle_sigint SIGINT
-trap handle_sigquit SIGQUIT
 
-#Display mesages indefinitely
+trap handle_sigint SIGINT
+trap handle_sigquit SIGQUIT SIGTERM
+
 while true
 do
 	echo "To infinity and beyond"
