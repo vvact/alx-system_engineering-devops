@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script that stops the process using kill
+
+PRID=$(pgrep -f 4-to_infinity_and_beyond)
+kill "$PRID"
