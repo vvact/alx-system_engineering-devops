@@ -5,6 +5,6 @@
 # The script prints the matchss seperated by \n
 
 pattern /hb(t{2, 5})n/
-TEXT = ARGV[0]
+text = ARGV[0]
 matches = text.scan(pattern)
 puts matches.join("\n")
