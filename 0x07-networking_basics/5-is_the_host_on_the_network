@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Sript to check no. of pings five times
+# Sript pings five times, checking connection through ICMP
 if [ $# -eq 0 ]
 then
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
