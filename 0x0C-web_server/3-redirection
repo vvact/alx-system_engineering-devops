@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# installs nginx server
+
+sudo apt update
+sudo apt install -y nginx
+echo "Hello World" > /var/www/html/index.html
+sudo sed -i '47a redirect 301 ^/redirect_me(/*) https://www.youtube.com permanent;' /etc/nginx/sites-available/default
+sudo service nginx restart
