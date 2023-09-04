@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #installs nginx server
 
+sudo apt-get install --no-install-recommends software-properties-common
+sudo add-apt-get install haproxy=2.6.\*
 sudo apt-get update
 sudo apt-get install haproxy
 sudo sed -i -e '$aEnabled=1\n' /etc/default/haproxy
