@@ -3,7 +3,7 @@
 
 exec { 'apt-date':
         command => '/usr/bin/apt-get -y update',
-        path    => ['/usr/bin', '/bin']
+        path    => ['/usr/bin', '/bin'],
 }
 
 package { 'nginx':
@@ -11,7 +11,7 @@ package { 'nginx':
 }
 
 file {'/var/www/html/index.html':
-        content => 'Hello World!'
+        content => 'Hello World!',
 }
 
 file_line { 'add custom header':
@@ -22,5 +22,5 @@ file_line { 'add custom header':
 }
 
 service { 'nginx':
-  ensure  => running,
+  ensure => running,
 }
