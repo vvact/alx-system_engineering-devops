@@ -1,7 +1,7 @@
 # Add a custom HTTP  header with puppet
 # custom HTTP  header must be X-Served-By
 
-exec { 'apt-date':
+exec { 'apt-update':
         command => '/usr/bin/apt-get -y update',
         path    => ['/usr/bin', '/bin'],
 }
