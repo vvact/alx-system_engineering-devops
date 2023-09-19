@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Set up MySQL Source/Master server configuration
+# MySQL Configuration file: /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# Exit on error
+set -eo pipefail
+
+# Check if user is running as root
+if [[ $EUID -ne 0 ]]; then
+        echo "Run this script using sudo"
+        exit 1
+fi
+
+# Add UFW rule to allow mysql port 
+ufw allow 3306 comment "MySQL"
+
+# Edit MySQL Configuration file
+CONFIG_FILE='/etc/mysql/mysql.conf.d/mysqld.cnf'
+cp $CONFIG_FILE $CONFIG_FILE.bak
+
+# Comment out bind-address directive
+sed -i 's/bind-address/# bind-address/' $CONFIG_FILE
+
+tee -a $CONFIG_FILE <<EOF
+
+# Source database Configuration
+
+# Unique Server ID
+server-id       = 1
+
+# Binary Log file
+log_bin         = /var/log/mysql/mysql-bin.log
+
+# Database to replicate
+binlog_do_db    = tyrell_corp
+
+EOF
+
+# Restart MySQL Server
+service mysql restart
