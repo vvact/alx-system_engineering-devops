@@ -4,18 +4,23 @@ returns info about employees TODO list progress using
 RESTAPI
 """
 import requests
-from sys import argv
+import sys
 
 
 if __name__ == "__main__":
-    url = "https://jsonplaceholder.typicode.com/users/"
-    user = requests.get(url + "{}".format(argv[1])).json()
-    todos = requests.get(url + "{}/todos".format(argv[1])).json()
-    tasks = [todo.get('title') for todo in todos
-             if todo.get('completed') is True]
+    if len(sys.argv) > 1:
+        userid = sys.argv[1]
 
-    print("Employee {} is done with tasks({}/{}):"
-          .format(user.get('name'), len(tasks), len(todos)))
+        api_url = 'https://jsonplaceholder.typicode.com/'
+        user_url = api_url + 'users/{}'.format(userid)
+        user_todos_url = api_url + 'users/{}/todos'.format(userid)
 
-    for task in tasks:
-        print("\t {}".format(task))
+        # Requesrs te data
+        user = requests.get(user_url).json()
+        todos = requests.get(user_todos_url).json()
+
+        titles = [todo.get('title') for todo in todos if todo.get('completed')]
+
+        print("Employee {} is done with tasks({}/{}):".format(
+            user.get('name'), len(titles), len(todos)))
+        print('\n'.join(['\t {}'.format(title) for title in titles]))
