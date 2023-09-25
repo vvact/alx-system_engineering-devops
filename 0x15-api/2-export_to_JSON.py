@@ -2,9 +2,9 @@
 """
 Converts a user TODO list as to json data
 """
+import json
 import requests
 import sys
-import json
 
 
 if __name__ == "__main__":
