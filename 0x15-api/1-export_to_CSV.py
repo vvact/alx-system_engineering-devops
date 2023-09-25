@@ -18,7 +18,7 @@ if __name__ == "__main__":
         user = requests.get(user_url).json()
         todos = requests.get(user_todos_url).json()
 
-        csv_data = ['"{}", "{}", "{}", "{}"'.format(
+        csv_data = ['"{}","{}","{}","{}"'.format(
             user_id,
             user.get('username'),
             todo.get('completed'),
