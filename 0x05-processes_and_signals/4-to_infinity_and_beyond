@@ -1,1 +1,8 @@
-4-to_infinity_and_beyond
+#!/usr/bin/env bash
+# Script that dislay a string indefinetely
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
