@@ -15,13 +15,10 @@ def top_ten(subreddit):
         res = requests.get(url, headers=headers,
                            allow_redirects=False)
         if res.status_code == 200:
-            # extracts the children field fro the json response returned
-            # by thev API. The children field typically contain the info
-            # about the posts
             posts = res.json().get('data').get('children')
             for i in range(10):
                 print(posts[i].get('data').get('title'))
         else:
-            print("None")
+            pass
     except Exception:
         print("None")
