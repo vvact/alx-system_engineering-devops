@@ -15,8 +15,6 @@ def top_ten(subreddit):
         res = requests.get(url, headers=headers,
                            allow_redirects=False)
         if res.status_code == 200:
-            # children is var that will hold a list of dicts representing
-            # the child elements of a Reddit API response
             # extracts the children field fro the json response returned
             # by thev API. The children field typically contain the info
             # about the posts
