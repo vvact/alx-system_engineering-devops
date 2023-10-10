@@ -7,19 +7,22 @@ import requests
 
 
 def top_ten(subreddit):
-    """Get the top 10 hot posts"""
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    """Top 10 hot posts in using Reddit API"""
+    res = requests.request(
+        'GET',
+        'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit),
+        headers={
+            'User-Agent': 'Reggy'
+        },
+        allow_redirects=False
+    )
 
-    headers = {'User-Agent': 'Reggy'}
-
-    try:
-        res = requests.get(url, headers=headers,
-                           allow_redirects=False)
-        if res.status_code == 200:
+    if res.status_code == 200:
+        try:
             posts = res.json().get('data').get('children')
-            for i in range(10):
-                print(posts[i].get('data').get('title'))
-        else:
-            print("None")
-    except Exception:
-        print("None")
+
+            [print(post.get('data').get('title')) for post in posts]
+        except Exception:
+            pass
+    else:
+        print(None)
