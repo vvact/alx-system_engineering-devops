@@ -29,7 +29,7 @@ server {
         # Serve /number_odd_or_even/ route on AirBnB_clone_v2
         location ~/airbnb-dynamic/number_odd_or_even/(\d+)$ {
                 proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
-}
+	}	
 
 
         # SSL configuration
