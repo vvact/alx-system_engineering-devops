@@ -1,0 +1,1 @@
+A regular expression (regex or regexp) is a sequence of characters that forms a search pattern. It is used for pattern matching within strings. Regular expressions are powerful tools for string manipulation and searching. They are widely used in programming languages, text editors, and other tools where pattern matching is essential.
