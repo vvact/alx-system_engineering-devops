@@ -1,0 +1,1 @@
+Networking refers to the practice of connecting computers and other devices to share resources. It involves both the physical hardware (such as cables, routers, and switches) and the software protocols that enable communication between devices. Here are some fundamental concepts in networking:
