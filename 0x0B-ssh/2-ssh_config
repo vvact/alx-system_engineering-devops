@@ -1,0 +1,4 @@
+#sssh authentication to log into server with a password
+Host *
+      PasswordAuthentication no
+      IdentityFile ~/.ssh/school
