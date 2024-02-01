@@ -1,4 +1,2 @@
-./0-nginx_likes_port_80: line 5: remove: command not found
-rm: cannot remove '/etc/nginx/sites-enabled/default': No such file or directory
-./0-nginx_likes_port_80: line 9: In: command not found
+sed: can't read /etc/nginx/nginx.conf: No such file or directory
 nginx: unrecognized service
