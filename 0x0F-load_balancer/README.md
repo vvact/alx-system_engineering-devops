@@ -1,0 +1,1 @@
+ It involves distributing incoming network traffic across multiple servers or resources to ensure optimal utilization, maximize throughput, minimize response time, and avoid overloading any single server. 
