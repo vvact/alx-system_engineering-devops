@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#configure ufw firewall
+
+set -e
+if ! command -v ufw &>/dev/null; then
+        sudo apt-get update
+        sudo apt-get install ufw
+fi
+
+sudo ufw enable
+sudo ufw allow 22 comment "SSH"
+sudo ufw allow 443 comment "Https SSL"
+sudo ufw allow 80 comment "Http"
+sudo service ufw restart
+
+# Allow network packets fowarding
+echo 'net/ipv4/ip_forward=1' | sudo tee -a /etc/ufw/sysctl.conf
+
+# Append Network Address Translation (NAT) table to /etc/ufw/before.rules
+# Append the rules directly to before.rules using a heredoc and sudo tee
+sudo tee -a /etc/ufw/before.rules <<EOF
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+COMMIT
+EOF
